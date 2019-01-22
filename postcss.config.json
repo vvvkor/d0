@@ -1,0 +1,17 @@
+{
+  "use": ["postcss-custom-properties", "postcss-calc", "postcss-discard-comments", "perfectionist"],
+  "input": "src/d0.css",
+  "output": "dist/d0.css",
+  "local-plugins": "true",
+  "postcss-custom-properties": {
+    "preserve": true
+  },
+  "postcss-calc": {
+  },
+  "postcss-discard-comments": {
+  },
+  "perfectionist": {
+    "format": "expanded",
+    "//format": "expanded | compact | compressed"
+  }
+}

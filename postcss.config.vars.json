@@ -1,0 +1,11 @@
+{
+  "use": ["postcss-discard-comments", "perfectionist"],
+  "input": "src/d0.css",
+  "output": "dist/d0.vars.css",
+  "local-plugins": "true",
+  "postcss-discard-comments": {
+  },
+  "perfectionist": {
+    "format": "expanded"
+  }
+}
