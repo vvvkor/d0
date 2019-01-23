@@ -376,6 +376,11 @@ section>table td:empty {
         color: var(--bg);
     }
 
+    span>button:only-child, span>[type="submit"]:only-child {
+        background-color: var(--text-lite);
+        color: var(--bg);
+    }
+
     mark>a:only-child, mark>a:only-child>svg {
         color: var(--text-danger);
     }

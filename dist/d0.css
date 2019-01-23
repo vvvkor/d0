@@ -416,6 +416,13 @@ section>table td:empty {
         color: var(--bg);
     }
 
+    span>button:only-child, span>[type="submit"]:only-child {
+        background-color: #999;
+        background-color: var(--text-lite);
+        color: #fff;
+        color: var(--bg);
+    }
+
     mark>a:only-child, mark>a:only-child>svg {
         color: #c11;
         color: var(--text-danger);

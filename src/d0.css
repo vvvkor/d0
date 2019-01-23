@@ -235,6 +235,7 @@ figure>b:only-child{background-color:var(--bg-warning);}
 figure>i:only-child{background-color:var(--bg-info);}
 figure>em:only-child{background-color:var(--bg-success);}
 mark>button:only-child,mark>[type="submit"]:only-child{background-color:var(--text-danger);color:var(--bg);}
+span>button:only-child,span>[type="submit"]:only-child{background-color:var(--text-lite);color:var(--bg);}
 mark>a:only-child, mark>a:only-child>svg{color:var(--text-danger);}
 
 /* menu */

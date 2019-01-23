@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>d0 - Classless CSS microframework</title>
 
-	<!-- CDN -->
+	<!-- CDN -- >
 	<link href="https://cdn.jsdelivr.net/npm/d0css/dist/d0.min.css" rel="stylesheet">
-	<!-- local-npm-src -- >
+	<!-- local-npm-src -->
 	<link href="../src/d0.css" rel="stylesheet">
 	<!-- local-npm-dist -- >
 	<link href="../dist/d0.min.css" rel="stylesheet">
@@ -152,7 +152,7 @@ block.
 
 <h2 id="alert">Alert and status colors</h2>
 
-<pre>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, mark &gt; button, mark &gt; a</pre>
+<pre>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, span &gt; button, mark &gt; button, mark &gt; a</pre>
 <!--p><mark>Not for production</mark></p-->
 <figure><mark>Error</mark></figure>
 <figure><b>Warning</b></figure>
@@ -162,14 +162,20 @@ block.
 <form action="#submit">
 	<p>
 		<button><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Button</span></button>
-		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
-		<mark><button formaction="#submit-dander"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
-			<input type="submit" value="Submit">
-			<input type="submit" value="Disabled" disabled>
-			<mark><input type="submit" value="Marked"></mark>
+		<input type="submit" value="Submit">
 		<a href="#link">Link</a>
-		<a>No-href</a>
+	<br>
+		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
+		<input type="submit" value="Disabled" disabled>
+		<a>Link without <code>href</code></a>
+	<br>
+		<mark><button formaction="#submit-danger"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
+		<mark><input type="submit" value="Marked"></mark>
 		<mark><a href="#link-danger">Marked</a></mark>
+	<br>
+		<span><button formaction="#submit-lite"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Lite</span></button></span>
+		<span><input type="submit" value="Lite"></span>
+		Text
 	</p>
 </form>
 <!--
@@ -215,7 +221,7 @@ block.
 	<tr><th>Menu	<td>+	<td>*	<td>CSS: <s><code>menu</code></s>, <code>nav &gt; ul, header &gt; nav &gt; ul</code>; hover
 	<tr><th>Popup	<td>+	<td>*	<td>CSS: <code>nav[id] &gt; ul</code>; hover
 	<tr><th>Wrap	<td>+	<td>*	<td>CSS: <code>main</code>
-	<tr><th>Alert	<td>+	<td>*	<td>CSS: <code>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, mark &gt; button, mark &gt; a</code>
+	<tr><th>Alert	<td>+	<td>*	<td>CSS: <code>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, mark &gt; button, span &gt; button, mark &gt; a</code>
 	<tr><th>Icon	<td>+	<td>*	<td>CSS: <code>svg</code>
 	<tr><th>Grid	<td>+	<td>*	<td>CSS: <code>section &gt; table, section &gt; table td[colspan]</code>
 	<tr><th>Table	<td>+	<td>*	<td>
