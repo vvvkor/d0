@@ -1,4 +1,4 @@
-/*! d0css v1.0.0 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.1 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -436,11 +436,11 @@ section>table td:empty {
         position: relative;
     }
 
-    nav>ul li:not(:hover)>ul {
+    nav>ul li:not(:hover)>ul:not(:target) {
         display: none;
     }
 
-    nav>ul a {
+    nav>ul li>a, nav>ul li>div {
         display: block;
         padding: .5em 1em;
         padding: var(--gaps-n);
@@ -482,6 +482,23 @@ section>table td:empty {
         position: absolute;
         right: .5em;
         top: .5em;
+    }
+
+    nav[id] {
+        display: inline-block;
+    }
+
+    nav[id]>ul>li>a {
+        padding: 0;
+    }
+
+    nav[id]>ul>li>a:after {
+        display: none;
+    }
+
+    nav[id]>ul>li>ul {
+        left: 0;
+        top: 100%;
     }
 
     section[id] {
@@ -554,12 +571,12 @@ section>table td:empty {
         top: 0;
     }
 
-    nav>ul>li:nth-last-child(-n+2) ul {
+    nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul {
         left: auto;
         right: 0;
     }
 
-    nav>ul>li:nth-last-child(-n+2) ul ul {
+    nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul ul {
         right: 100%;
     }
 

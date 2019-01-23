@@ -177,6 +177,11 @@ mark{background-color:var(--bg-warning);}
 	/* form */
 	input,select,textarea{border-width:0 0 thin 0;}
 	button,[type="submit"]{border:var(--border);padding:var(--gaps-s);}
+	/* popup * /
+	nav[id]{display:inline-block;}
+	nav[id]>ul{list-style:none;padding:0;margin:0;}
+	nav[id]>ul ul:not(:target){display:none;}
+	/**/
 }
 
 /* helpers */
@@ -186,6 +191,7 @@ mark{background-color:var(--bg-warning);}
 
 /* --- classless additions --- */
 
+/* togglers */
 section[id]:not(:target), aside[id]:not(:target){display:none;}
 
 /* grid */
@@ -235,8 +241,8 @@ mark>a:only-child, mark>a:only-child>svg{color:var(--text-danger);}
 header>nav>ul{background-color:var(--bg-pane);}
 nav ul{padding:0;margin:0;}
 nav>ul li{list-style:none;position:relative;}
-nav>ul li:not(:hover)>ul{display:none;}
-nav>ul a{display:block;padding:var(--gaps-n);}
+nav>ul li:not(:hover)>ul:not(:target){display:none;}
+nav>ul li>a, nav>ul li>div{display:block;padding:var(--gaps-n);}
 nav>ul li:hover>a{color:var(--text-hilite);background-color:var(--bg-hilite);}
 nav>ul ul{position:absolute;z-index:30;background-color:var(--bg);left:5em;top:0;display:block;min-width:12em;box-shadow:0 .1em .5em rgba(0,0,0,.3);}
 /* form */
@@ -244,6 +250,11 @@ nav>ul li>form{padding:calc(var(--gap-n) * var(--gap-rate) - var(--gap-xs)) var(
 /* subnav arrow */
 nav>ul li>a:nth-last-child(2):after{position:static;display:inline-block;content:'\a0\a0\203a';color:var(--text-lite);}
 nav>ul ul li>a:nth-last-child(2):after{position:absolute;right:.5em;top:.5em;} 
+/* popup */
+nav[id]{display:inline-block;}
+nav[id]>ul>li>a{padding:0;}
+nav[id]>ul>li>a:after{display:none;}
+nav[id]>ul>li>ul{left:0;top:100%;}
 
 /* toggle */
 section[id]{border:var(--border);padding:var(--gap-n);}
@@ -277,8 +288,8 @@ aside[id]{
 	nav>ul ul{left:0;top:100%;}
 	nav>ul ul ul{left:100%;top:0;}
 	/* change dropdown direction*/
-	nav>ul>li:nth-last-child(-n+2) ul{left:auto;right:0;}
-	nav>ul>li:nth-last-child(-n+2) ul ul{right:100%;}
+	nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul{left:auto;right:0;}
+	nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul ul{right:100%;}
 	/* form */
 	form>table td:first-child:not([colspan]){/*min-*/width:12em;text-align:right;}
 	fieldset table td:first-child:not([colspan]){/*min-*/width:calc(12em - var(--gap-n) - var(--gap-s));}

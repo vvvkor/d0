@@ -22,8 +22,9 @@
 * Typography
 * Wrap (``max-width``)
 * Grid
-* Dropdown menu
 * Form (inline, stacked, aligned)
+* Dropdown menu
+* Popup
 * Toggle element
 * Modal dialog
 * Alert

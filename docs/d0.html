@@ -25,7 +25,7 @@
 <ul>
 <li>Minimalist and lightweight
 <li>Styling is not based on classes, additional attributes and hacks
-<li>Just tags and a bit of nesting
+<li>Just tags and some cascading
 <li>Uses native elements and behaviour when possible
 <li>Valid CSS and HTML
 <li>Pure CSS, no Javascript
@@ -38,30 +38,34 @@
 </ul>
 
 
-<h2 id="menu">Menu (stacked on small screen)</h2>
+<h2 id="togglers">Togglers</h2>
+
+<h3 id="menu">Menu (stacked on small screen)</h3>
 
 <pre>nav &gt; ul, header &gt; nav &gt; ul</pre>
 
 <header>
 <nav>
 <ul>
-	<li><a href="#menu">Menu</a>
+	<li><a href="https://github.com/vvvkor/d0"><svg width="32" height="32"><use xlink:href="#svg-github"/></svg> <span>GitHub</span></a></li>
+	<li><a href="#togglers-sub">Togglers</a> <!--href="#togglers"-->
+		<ul id="togglers-sub">
+			<li><a href="#menu">Menu</a>
+			<li><a href="#popup">Popup</a>
+			<li><a href="#toggle">Toggle</a>
+			<li><a href="#modal">Modal</a>
+			<!--
+			<li><a href="#details">Details</a>
+			<li><a href="#dialog">Dialog</a>
+			-->
+		</ul>
 	<li><a href="#wrap">Wrap</a>
 	<li><a href="#alert">Alert</a>
 	<li><a href="#icon">Icon</a>
 	<li><a href="#grid">Grid</a>
 	<li><a href="#table">Table</a>
-	<li><a href="#togglers">Togglers</a>
-		<ul>
-		<li><a href="#toggle">Toggle</a>
-		<li><a href="#modal">Modal</a>
-		<!--
-		<li><a href="#details">Details</a>
-		<li><a href="#dialog">Dialog</a>
-		-->
-		</ul>
-	<li><a href="#form">Form</a>
-		<ul>
+	<li><a href="#form-sub">Form</a> <!--href="#form"-->
+		<ul id="form-sub">
 			<li><a href="#form-inline">Inline form</a>
 			<li><a href="#form-stacked">Stacked form</a>
 			<li><a href="#form-aligned">Aligned form</a>
@@ -74,6 +78,73 @@
 </ul>
 </nav>
 </header>
+
+<h3 id="popup">Popup</h3>
+
+<pre>nav[id] &gt; ul</pre>
+
+Inline
+<nav id="pop1">
+	<ul>
+		<li>
+			<a href="#popup1">Popup</a>
+			<ul id="popup1">
+				<li><a href="#item1">Item</a>
+					<ul>
+						<li><a href="#subitem1">Subitem</a>
+					</ul>
+				<li><div>Div with inline <a href="#link">link</a></div>
+			</ul>
+	</ul>
+</nav>
+block.
+
+<h3 id="toggle">Toggle</h3>
+
+<pre>section[id]</pre>
+<p><a href="#t1">Show hidden section</a></p>
+<section id="t1">Hidden section</section>
+
+<h3 id="modal">Modal</h3>
+
+<pre>aside[id]</pre>
+<p><a href="#t2">Open modal dialog</a></p>
+<aside id="t2">
+	<p>Dialog.<br>To close use access key <kbd>X</kbd>.</p>
+	<form action="#ok">
+		<p>
+			<button>OK</button>
+			<a href="#cancel">Cancel</a>
+		</p>
+	</form>
+</aside>
+
+<!--
+
+<h3 id="details">Details <mark><small>(not supported in IE)</small></mark></h3>
+
+<pre>details &gt; summary</pre>
+<details>
+	<summary>Summary</summary>
+	<div>Details</div>
+</details>
+
+<h3 id="dialog">Dialog <mark><small>(not supported in IE)</small></mark></h3>
+
+<pre>dialog</pre>
+<button id="btn1">open dialog</button>
+<dialog data-open id="dia1">
+	MODAL
+	<form method="dialog">
+		<button>OK</button>
+	</form>
+</dialog>
+<script>
+	var b = document.getElementById('btn1');
+	var d = document.getElementById('dia1');
+	b.onclick = function(){ d.showModal(); }
+</script>
+-->
 
 <h2 id="wrap">Wrap (limit max-width)</h2>
 
@@ -142,6 +213,7 @@
 	<tr><th>Component<th>Pure CSS<th>Support<th>Notes
 	<tbody>
 	<tr><th>Menu	<td>+	<td>*	<td>CSS: <s><code>menu</code></s>, <code>nav &gt; ul, header &gt; nav &gt; ul</code>; hover
+	<tr><th>Popup	<td>+	<td>*	<td>CSS: <code>nav[id] &gt; ul</code>; hover
 	<tr><th>Wrap	<td>+	<td>*	<td>CSS: <code>main</code>
 	<tr><th>Alert	<td>+	<td>*	<td>CSS: <code>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, mark &gt; button, mark &gt; a</code>
 	<tr><th>Icon	<td>+	<td>*	<td>CSS: <code>svg</code>
@@ -154,56 +226,6 @@
 	<tr><th>Form	<td>+	<td>*	<td>May use <code>details</code> for expandable fieldset
 	</tbody>
 </table>
-
-<h2 id="togglers">Togglers</h2>
-
-<h3 id="toggle">Toggle</h3>
-
-<pre>section[id]</pre>
-<p><a href="#t1">Show hidden section</a></p>
-<section id="t1">Hidden section</section>
-
-<h3 id="modal">Modal</h3>
-
-<pre>aside[id]</pre>
-<p><a href="#t2">Open modal dialog</a></p>
-<aside id="t2">
-	<p>Dialog.<br>To close use access key <kbd>X</kbd>.</p>
-	<form action="#ok">
-		<p>
-			<button>OK</button>
-			<a href="#cancel">Cancel</a>
-		</p>
-	</form>
-</aside>
-
-<!--
-
-<h3 id="details">Details <mark><small>(not supported in IE)</small></mark></h3>
-
-<pre>details &gt; summary</pre>
-<details>
-	<summary>Summary</summary>
-	<div>Details</div>
-</details>
-
-<h3 id="dialog">Dialog <mark><small>(not supported in IE)</small></mark></h3>
-
-<pre>dialog</pre>
-<button id="btn1">open dialog</button>
-<dialog data-open id="dia1">
-	MODAL
-	<form method="dialog">
-		<button>OK</button>
-	</form>
-</dialog>
-<script>
-	var b = document.getElementById('btn1');
-	var d = document.getElementById('dia1');
-	b.onclick = function(){ d.showModal(); }
-</script>
-
--->
 
 <h2 id="form"><svg width="32" height="32"><use xlink:href="#svg-date"/></svg> Form</h2>
 
