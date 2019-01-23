@@ -6,7 +6,7 @@
 
 * Minimalist and lightweight
 * Styling is not based on classes, additional attributes and hacks
-* Just tags and a bit of nesting
+* Just tags and some cascading
 * Uses native elements and behaviour when possible
 * Valid CSS and HTML
 * Pure CSS, no Javascript
