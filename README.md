@@ -27,9 +27,10 @@
 * Popup
 * Toggle element
 * Modal dialog
+* Gallery
+* Table
 * Alert
 * Icon
-* Table
 
 ## Getting Started
 

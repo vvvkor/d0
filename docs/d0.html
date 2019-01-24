@@ -51,19 +51,24 @@ Submenu of last item drops to the left.
 <nav>
 <ul>
 	<li><mark><a href="https://github.com/vvvkor/d0"><svg width="32" height="32"><use xlink:href="#svg-github"/></svg> <span>GitHub</span></a></mark></li>
-	<li><a href="#togglers-sub">Toggle</a> <!--href="#togglers"-->
+	<li><a href="#togglers-sub">Togglers</a> <!--href="#togglers"-->
 		<ul id="togglers-sub">
 			<li><a href="#menu">Menu</a>
 			<li><a href="#popup">Popup</a>
 			<li><a href="#toggle">Toggle</a>
 			<li><a href="#modal">Modal</a>
+			<li><a href="#gallery">Gallery</a>
 			<!--
 			<li><a href="#details">Details</a>
 			<li><a href="#dialog">Dialog</a>
 			-->
 		</ul>
-	<li><a href="#wrap">Wrap</a>
-	<li><a href="#grid">Grid</a>
+	<li><a href="#layout-sub">Layout</a>
+		<ul>
+			<li><a href="#wrap">Wrap</a>
+			<li><a href="#grid">Grid</a>
+			<li><a href="#full">Full height</a>
+		</ul>
 	<li><a href="#table">Table</a>
 	<li><a href="#form-sub">Form</a> <!--href="#form"-->
 		<ul id="form-sub">
@@ -127,6 +132,19 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 	</form>
 </aside>
 
+<h3 id="gallery">Gallery</h3>
+
+<pre>figure[id] &gt; a</pre>
+
+<p><a href="#i1">Show gallery</a></p>
+
+<figure id="gal">
+	<a id="i1" href="#i2" title="Image 1" ><img alt="1" src="https://placehold.it/350x150/ffdddd"></a>
+	<a id="i2" href="#i3" title="Image 2" ><img alt="2" src="https://placehold.it/350x150/ddffdd"></a>
+	<a id="i3" href="#i1" title="Image 3" ><img alt="3" src="https://placehold.it/350x150/ddddff"></a>
+	<a href="#cancel" title="To close use access key X">&times;</a>
+</figure>
+
 <!--
 
 <h3 id="details">Details <mark><small>(not supported in IE)</small></mark></h3>
@@ -154,11 +172,13 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 </script>
 -->
 
-<h2 id="wrap">Wrap (limit max-width)</h2>
+<h2 id="layout">Layout</h2>
+
+<h3 id="wrap">Wrap (limit max-width)</h3>
 
 <pre>main</pre>
 
-<h2 id="grid">Grid (stacked on small screen)</h2>
+<h3 id="grid">Grid (stacked on small screen)</h3>
 
 <pre>section &gt; table, section &gt; table td[colspan]</pre>
 
@@ -175,6 +195,16 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 	<tr style="background:#ddd;"><td></td><td></td><td></td>
 </table>
 </section>
+
+<h3 id="full">Full height</h3>
+
+<pre>figure &gt; section</pre>
+
+<figure>
+	<section style="background:#eed;">
+		Full height
+	</section>
+</figure>
 
 
 <h2 id="table">Table</h2>
@@ -193,10 +223,12 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 	<tr><th>Popup	<td>*	<td>hover	<td><code>nav[id] &gt; ul</code>
 	<tr><th>Toggle	<td>*	<td>target	<td><code>section[id]</code>
 	<tr><th>Modal	<td>*	<td>target	<td><code>aside[id]</code>
+	<tr><th>Gallery	<td>*	<td>target	<td><code>figure[id] &gt; a &gt; img</code>
 	<!--tr><th>Details	<td>+ocf -e	<td>native	<td-->
 	<!--tr><th>Dialog	<td>+oc *f -e<td>js	<td><code>dialog, dialog::backdrop</code>; Close on Escape -->
 	<tr><th>Wrap	<td>*	<td>max-width	<td><code>main</code>
 	<tr><th>Grid	<td>*	<td>responsive	<td><code>section &gt; table, section &gt; table td[colspan]</code>
+	<tr><th>Full	<td>*	<td>height		<td><code>figure &gt; section</code>
 	<tr><th>Table	<td>*	<td>hover, h-scroll	<td><code>table, figure &gt; table</code>
 	<tr><th>Form	<td>*	<td>responsive	<td><code>form &gt; input, form &gt; p &gt; label + br + input, form &gt; table</code>
 	<tr><th>Alert	<td>*	<td>color		<td><code>figure &gt; mark, figure &gt; b, figure &gt; i, figure &gt; em, mark &gt; button, span &gt; button, mark &gt; a</code>
@@ -338,13 +370,17 @@ mark &gt; button, span &gt; button, mark &gt; a</pre>
 
 <pre>svg</pre>
 
+<p>
 <a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Link with icon</a>
 <mark><a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Marked link with icon</a></mark>
+</p>
 
 
 </main>
 
-<svg class="hide" width="0" height="0">
+<aside id="hidden">
+
+<svg width="0" height="0">
 <symbol id="svg-logo" viewBox="-2 0 105 82">
 	<path d="M0 10Q 15 9 20 9C35 9 62.5 9 62.5 42C62.5 75 35 75 20 75Q15 75 0 74L0 80L20 80C35 80 70 80 70 42C70 4 35 4 20 4L0 4z"/>
 	<path d="M76 10L76 16L94 10L94 80L101 80L101 2z"/>
@@ -370,7 +406,6 @@ mark &gt; button, span &gt; button, mark &gt; a</pre>
 </symbol>
 </svg>  
 
-<aside id="hidden">
 <a href="#esc" accesskey="x"></a>
 </aside>
 

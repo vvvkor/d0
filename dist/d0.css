@@ -1,4 +1,4 @@
-/*! d0css v1.0.2 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.3 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -558,6 +558,57 @@ section>table td:empty {
         max-width: 80vw;
         max-height: 80vh;
         z-index: 50;
+    }
+
+    figure>section {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    figure[id] {
+        margin: 0;
+    }
+
+    figure[id]>a, figure[id]>a:after {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        color: #fff;
+        color: var(--bg);
+        background: rgba(0, 0, 0, .2);
+        padding: 0 .5em;
+        padding: 0 var(--gap-s);
+    }
+
+    figure[id]>a:target {
+        background: #000;
+        z-index: 40;
+        display: block;
+        width: 100%;
+        height: 100vh;
+    }
+
+    figure[id]>a>img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    figure[id]>a:target~a:not([id]), figure[id]>a[title]:target:after {
+        display: block;
+        z-index: 41;
+    }
+
+    figure[id]>a[title]:after {
+        content: attr(title);
+    }
+
+    figure[id]>a:not([id]) {
+        left: auto;
+        right: 0;
     }
 }
 
