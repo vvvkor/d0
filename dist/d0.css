@@ -1,4 +1,4 @@
-/*! d0css v1.0.1 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.2 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -218,6 +218,16 @@ textarea {
 
 hr {
     border-width: thin 0 0 0;
+}
+
+figure {
+    overflow-x: auto;
+}
+
+figure>table {
+    border: thin solid rgba(0, 0, 0, .16);
+    border: var(--border);
+    border-width: medium;
 }
 
 form>p {
@@ -447,13 +457,13 @@ section>table td:empty {
         display: none;
     }
 
-    nav>ul li>a, nav>ul li>div {
+    nav>ul li>*:first-child {
         display: block;
         padding: .5em 1em;
         padding: var(--gaps-n);
     }
 
-    nav>ul li:hover>a {
+    nav>ul li:hover>a, figure>table tr:hover {
         color: inherit;
         color: var(--text-hilite);
         background-color: rgba(0, 0, 0, .05);
@@ -472,7 +482,7 @@ section>table td:empty {
         box-shadow: 0 .1em .5em rgba(0, 0, 0, .3);
     }
 
-    nav>ul li>form {
+    nav>ul li>form:first-child {
         padding: .3em 1em;
         padding: calc(var(--gap-n)*var(--gap-rate) - var(--gap-xs)) var(--gap-n);
     }
@@ -491,7 +501,7 @@ section>table td:empty {
         top: .5em;
     }
 
-    nav[id] {
+    nav[id], nav[id]>ul {
         display: inline-block;
     }
 
@@ -506,6 +516,11 @@ section>table td:empty {
     nav[id]>ul>li>ul {
         left: 0;
         top: 100%;
+    }
+
+    nav[id]>ul>li:last-child:not(:first-child) ul {
+        left: auto;
+        right: 0;
     }
 
     section[id] {
@@ -578,12 +593,12 @@ section>table td:empty {
         top: 0;
     }
 
-    nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul {
+    nav>ul>li:last-child:not(:first-child) ul {
         left: auto;
         right: 0;
     }
 
-    nav>ul>li:nth-last-child(-n+2):nth-child(n+4) ul ul {
+    nav>ul>li:last-child:not(:first-child) ul ul {
         right: 100%;
     }
 

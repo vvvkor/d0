@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>d0 - Classless CSS microframework</title>
+	<title>d0.css - Classless CSS microframework</title>
 
-	<!-- CDN -- >
+	<!-- CDN -->
 	<link href="https://cdn.jsdelivr.net/npm/d0css/dist/d0.min.css" rel="stylesheet">
-	<!-- local-npm-src -->
+	<!-- local-npm-src -- >
 	<link href="../src/d0.css" rel="stylesheet">
 	<!-- local-npm-dist -- >
 	<link href="../dist/d0.min.css" rel="stylesheet">
@@ -18,9 +18,7 @@
 </head>
 <body>
 <main>
-<h1>d0 - Classless CSS microframework</h1>
-
-<p><a href="https://github.com/vvvkor/d0">d0 on GitHub</a></p>
+<h1><a href="https://github.com/vvvkor/d0">d0</a> - Classless CSS microframework</h1>
 
 <ul>
 <li>Minimalist and lightweight
@@ -44,11 +42,16 @@
 
 <pre>nav &gt; ul, header &gt; nav &gt; ul</pre>
 
+<p>
+<code>Nav</code> inside <code>header</code> has background.<br>
+Submenu of last item drops to the left.
+</p>
+
 <header>
 <nav>
 <ul>
-	<li><a href="https://github.com/vvvkor/d0"><svg width="32" height="32"><use xlink:href="#svg-github"/></svg> <span>GitHub</span></a></li>
-	<li><a href="#togglers-sub">Togglers</a> <!--href="#togglers"-->
+	<li><mark><a href="https://github.com/vvvkor/d0"><svg width="32" height="32"><use xlink:href="#svg-github"/></svg> <span>GitHub</span></a></mark></li>
+	<li><a href="#togglers-sub">Toggle</a> <!--href="#togglers"-->
 		<ul id="togglers-sub">
 			<li><a href="#menu">Menu</a>
 			<li><a href="#popup">Popup</a>
@@ -60,8 +63,6 @@
 			-->
 		</ul>
 	<li><a href="#wrap">Wrap</a>
-	<li><a href="#alert">Alert</a>
-	<li><a href="#icon">Icon</a>
 	<li><a href="#grid">Grid</a>
 	<li><a href="#table">Table</a>
 	<li><a href="#form-sub">Form</a> <!--href="#form"-->
@@ -74,7 +75,13 @@
 					<li><a href="#form-submit">Submit</a>
 				</ul>
 		</ul>
-	<li><form action="?"><input type="search" name="q" size="5" autocomplete="off" title="Search"></form>
+	<li><a href="#alert">Alert</a>
+	<li><a href="#icon">Icon</a>
+	<li><form action="?"><input type="search" name="q" size="3" autocomplete="off" title="Search"></form>
+	<li><a href="#drop-left">Last</a>
+		<ul>
+			<li><i>Drop left</i>
+		</ul>
 </ul>
 </nav>
 </header>
@@ -86,6 +93,7 @@
 Inline
 <nav id="pop1">
 	<ul>
+		
 		<li>
 			<a href="#popup1">Popup</a>
 			<ul id="popup1">
@@ -97,7 +105,7 @@ Inline
 			</ul>
 	</ul>
 </nav>
-block.
+block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a href="#pop-left">to the left</a><ul id="pop-left"><li><b>Pop left</b></ul></ul></nav>.
 
 <h3 id="toggle">Toggle</h3>
 
@@ -150,52 +158,12 @@ block.
 
 <pre>main</pre>
 
-<h2 id="alert">Alert and status colors</h2>
-
-<pre>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, span &gt; button, mark &gt; button, mark &gt; a</pre>
-<!--p><mark>Not for production</mark></p-->
-<figure><mark>Error</mark></figure>
-<figure><b>Warning</b></figure>
-<figure><em>Success</em></figure>
-<figure><i>Info</i></figure>
-
-<form action="#submit">
-	<p>
-		<button><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Button</span></button>
-		<input type="submit" value="Submit">
-		<a href="#link">Link</a>
-	<br>
-		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
-		<input type="submit" value="Disabled" disabled>
-		<a>Link without <code>href</code></a>
-	<br>
-		<mark><button formaction="#submit-danger"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
-		<mark><input type="submit" value="Marked"></mark>
-		<mark><a href="#link-danger">Marked</a></mark>
-	<br>
-		<span><button formaction="#submit-lite"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Lite</span></button></span>
-		<span><input type="submit" value="Lite"></span>
-		Text
-	</p>
-</form>
-<!--
-<a href="#link-button"><button>Button inside link</button></a>
-<a href="#link-button"><mark><button>Marked button inside link</button></mark></a>
-<mark><i>Note:</i> Button inside link is not valid.</mark>
--->
-
-<h2 id="icon">Icon</h2>
-
-<pre>svg</pre>
-
-<a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Link with icon</a>
-<mark><a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Marked link with icon</a></mark>
-
 <h2 id="grid">Grid (stacked on small screen)</h2>
 
 <pre>section &gt; table, section &gt; table td[colspan]</pre>
 
 <!--p><mark><i>Note:</i> The <code>width</code> attribute on the <code>td</code> element is obsolete.</mark></p-->
+<p>Proportions of columns can be set with <code>colspan</code> or <code>width</code> attributes on <code>td</code>.</p>
 
 <section>
 <table>
@@ -211,27 +179,31 @@ block.
 
 <h2 id="table">Table</h2>
 
-<pre>table</pre>
+<pre>table, figure &gt; table</pre>
 
+<p><code>Table</code> inside <code>figure</code> has hover effect and (when needed) independent horizontal scrolling.</p>
+
+<figure>
 <table>
 	<caption>Table caption</caption>
 	<thead>
-	<tr><th>Component<th>Pure CSS<th>Support<th>Notes
+	<tr><th>Component<th>Support<th>Action<th>Code
 	<tbody>
-	<tr><th>Menu	<td>+	<td>*	<td>CSS: <s><code>menu</code></s>, <code>nav &gt; ul, header &gt; nav &gt; ul</code>; hover
-	<tr><th>Popup	<td>+	<td>*	<td>CSS: <code>nav[id] &gt; ul</code>; hover
-	<tr><th>Wrap	<td>+	<td>*	<td>CSS: <code>main</code>
-	<tr><th>Alert	<td>+	<td>*	<td>CSS: <code>figure &gt; mark, figure &gt; b, figure &gt; em, figure &gt; i, mark &gt; button, span &gt; button, mark &gt; a</code>
-	<tr><th>Icon	<td>+	<td>*	<td>CSS: <code>svg</code>
-	<tr><th>Grid	<td>+	<td>*	<td>CSS: <code>section &gt; table, section &gt; table td[colspan]</code>
-	<tr><th>Table	<td>+	<td>*	<td>
-	<tr><th>Toggle	<td>+	<td>*	<td>CSS: <code>section[id]</code>
-	<tr><th>Modal	<td>+	<td>*	<td>CSS: <code>aside[id]</code>
-	<tr><th>Details	<td>+	<td>+ocf -e<td>
-	<tr><th>Dialog	<td>JS	<td>+oc *f -e<td>CSS: <code>dialog, dialog::backdrop</code>; Close on Escape
-	<tr><th>Form	<td>+	<td>*	<td>May use <code>details</code> for expandable fieldset
+	<tr><th>Menu	<td>*	<td>hover, responsive	<td><!--s><code>menu</code></s--> <code>nav &gt; ul, header &gt; nav &gt; ul</code>
+	<tr><th>Popup	<td>*	<td>hover	<td><code>nav[id] &gt; ul</code>
+	<tr><th>Toggle	<td>*	<td>target	<td><code>section[id]</code>
+	<tr><th>Modal	<td>*	<td>target	<td><code>aside[id]</code>
+	<!--tr><th>Details	<td>+ocf -e	<td>native	<td-->
+	<!--tr><th>Dialog	<td>+oc *f -e<td>js	<td><code>dialog, dialog::backdrop</code>; Close on Escape -->
+	<tr><th>Wrap	<td>*	<td>max-width	<td><code>main</code>
+	<tr><th>Grid	<td>*	<td>responsive	<td><code>section &gt; table, section &gt; table td[colspan]</code>
+	<tr><th>Table	<td>*	<td>hover, h-scroll	<td><code>table, figure &gt; table</code>
+	<tr><th>Form	<td>*	<td>responsive	<td><code>form &gt; input, form &gt; p &gt; label + br + input, form &gt; table</code>
+	<tr><th>Alert	<td>*	<td>color		<td><code>figure &gt; mark, figure &gt; b, figure &gt; i, figure &gt; em, mark &gt; button, span &gt; button, mark &gt; a</code>
+	<tr><th>Icon	<td>+	<td>size	<td><code>svg</code>
 	</tbody>
 </table>
+</figure>
 
 <h2 id="form"><svg width="32" height="32"><use xlink:href="#svg-date"/></svg> Form</h2>
 
@@ -321,10 +293,55 @@ block.
 		<td>
 			<input type="submit" value="Submit">
 			<input type="submit" value="Disabled" disabled>
+			<mark><input type="submit" value="Marked"></mark>
+			<span><input type="submit" value="Lite"></span>
+			<a href="#link">Link</a>
 	</table>
 </form>
 
-	
+<h2 id="alert">Alert and status colors</h2>
+
+<pre>figure &gt; mark, figure &gt; b, figure &gt; i, figure &gt; em,
+mark &gt; button, span &gt; button, mark &gt; a</pre>
+<!--p><mark>Not for production</mark></p-->
+<figure><mark>Error</mark></figure>
+<figure><b>Warning</b></figure>
+<figure><i>Info</i></figure>
+<figure><em>Success</em></figure>
+
+<form action="#submit">
+	<p>
+		<button><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Button</span></button>
+		<input type="submit" value="Submit">
+		<a href="#link">Link</a>
+	<br>
+		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
+		<input type="submit" value="Disabled" disabled>
+		<a>Link without <code>href</code></a>
+	<br>
+		<mark><button formaction="#submit-danger"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
+		<mark><input type="submit" value="Marked"></mark>
+		<mark><a href="#link-danger">Marked</a></mark>
+	<br>
+		<span><button formaction="#submit-lite"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Lite</span></button></span>
+		<span><input type="submit" value="Lite"></span>
+		Text
+	</p>
+</form>
+<!--
+<a href="#link-button"><button>Button inside link</button></a>
+<a href="#link-button"><mark><button>Marked button inside link</button></mark></a>
+<mark><i>Note:</i> Button inside link is not valid.</mark>
+-->
+
+<h2 id="icon">Icon</h2>
+
+<pre>svg</pre>
+
+<a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Link with icon</a>
+<mark><a href="#icon"><svg width="32" height="32"><use xlink:href="#svg-edit"/></svg> Marked link with icon</a></mark>
+
+
 </main>
 
 <svg class="hide" width="0" height="0">
