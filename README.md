@@ -4,7 +4,7 @@
 
 ## Features
 
-* Minimalist and lightweight
+* Minimalist and lightweight (minified and gzipped CSS <3 KB)
 * Styling is not based on classes, additional attributes and hacks
 * Just tags and some cascading
 * Uses native elements and behaviour when possible
