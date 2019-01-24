@@ -13,7 +13,7 @@
 * Basic elements typography
 * Responsive wrapper, grid, nav, form, image
 * Printable style
-* Customizable with css vars
+* Customizable with css variables
 * Neutral defaults
 * Does not use ``float``, ``!important``
 

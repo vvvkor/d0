@@ -30,7 +30,7 @@
 <li><a href="d0-typo.html">Basic elements typography</a>
 <li>Responsive wrapper, grid, nav, form, image
 <li>Printable style
-<li>Customizable with css vars
+<li>Customizable with css variables
 <li>Neutral defaults
 <li>Does not use <code>float</code>, <code>!important</code>
 </ul>
@@ -134,14 +134,21 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 
 <h3 id="gallery">Gallery</h3>
 
-<pre>figure[id] &gt; a &gt; img</pre>
+<pre>figure[id] &gt; a &gt; img, figure[id] &gt; a[style="--img:url(...);"]</pre>
 
-<p><a href="#i1">Show gallery</a></p>
+<p>
+	<a href="#ia1">Show gallery A (linked images, all loaded)</a>
+	<br>
+	<a href="#ib1">Show gallery B (URL in CSS variable, lazy loading, preload next)</a>
+</p>
 
 <figure id="gal">
-	<a id="i1" href="#i2" title="Image 1" ><img alt="1" src="https://placehold.it/350x150/ffdddd"></a>
-	<a id="i2" href="#i3" title="Image 2" ><img alt="2" src="https://placehold.it/350x150/ddffdd"></a>
-	<a id="i3" href="#i1" title="Image 3" ><img alt="3" src="https://placehold.it/350x150/ddddff"></a>
+	<a id="ia1" href="#ia2" title="Image A1"><img alt="A1" src="https://placehold.it/160x90/ffffdd"></a>
+	<a id="ia2" href="#ia3" title="Image A2"><img alt="A2" src="https://placehold.it/150x150/ffddff"></a>
+	<a id="ia3" href="#ia1" title="Image A3"><img alt="A3" src="https://placehold.it/150x200/ddffff"></a>
+	<a id="ib1" href="#ib2" title="Image B1" style="--img:url(https://placehold.it/160x90/ffdddd)"></a>
+	<a id="ib2" href="#ib3" title="Image B2" style="--img:url(https://placehold.it/150x150/ddffdd)"></a>
+	<a id="ib3" href="#ib1" title="Image B3" style="--img:url(https://placehold.it/150x200/ddddff)"></a>
 	<a href="#cancel" title="To close use access key X">&times;</a>
 </figure>
 
@@ -223,7 +230,7 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 	<tr><th>Popup	<td>*	<td>hover	<td><code>nav[id] &gt; ul</code>
 	<tr><th>Toggle	<td>*	<td>target	<td><code>section[id]</code>
 	<tr><th>Modal	<td>*	<td>target	<td><code>aside[id]</code>
-	<tr><th>Gallery	<td>*	<td>target	<td><code>figure[id] &gt; a &gt; img</code>
+	<tr><th>Gallery	<td>*	<td>target	<td><code>figure[id] &gt; a &gt; img, figure[id] &gt; a[style="--img:url(...);"]</code>
 	<!--tr><th>Details	<td>+ocf -e	<td>native	<td-->
 	<!--tr><th>Dialog	<td>+oc *f -e<td>js	<td><code>dialog, dialog::backdrop</code>; Close on Escape -->
 	<tr><th>Wrap	<td>*	<td>max-width	<td><code>main</code>

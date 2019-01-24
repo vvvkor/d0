@@ -282,13 +282,18 @@ aside[id]{
 figure>section{height:100vh;display:flex;align-items:center;justify-content:center;}
 
 /* gallery */
+
 figure[id]{margin:0;}
-figure[id]>a,figure[id]>a:after{display:none;position:fixed;left:0;top:0;color:var(--bg);background:rgba(0,0,0,.2);padding:0 var(--gap-s);}
-figure[id]>a:target{background:#000;z-index:40;display:block;width:100%;height:100vh;}
+figure[id]>a,figure[id]>a:after{display:none;position:fixed;left:0;top:0;color:var(--bg);padding:0 var(--gap-s);}
+figure[id]>a:target{background:#000 50% 50% / contain no-repeat;background-image:var(--img);z-index:40;display:block;width:100%;height:100vh;cursor:default;}
+	/* controls */
+	figure[id]>a:target~a:not([id]), figure[id]>a:target[title]:after{display:block;z-index:41;}
+	figure[id]>a[title]:after{content:attr(title);right:0;height:5em;box-shadow:inset 0 3em 3em -1.5em rgba(0,0,0,.3);}
+	figure[id]>a:not([id]){left:auto;right:0;}
+	/* preload next */
+	figure[id]>a:target+a{background-image:var(--img);background-position:999em 999em;}
+/* img */
 figure[id]>a>img{object-fit:contain;width:100%;height:100%;}
-figure[id]>a:target~a:not([id]), figure[id]>a[title]:target:after{display:block;z-index:41;}
-figure[id]>a[title]:after{content:attr(title);}
-figure[id]>a:not([id]){left:auto;right:0;}
 
 } /* /screen */
 

@@ -1,6 +1,6 @@
 {
   "name": "d0css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Classless CSS microframework",
   "main": "d0.css",
   "scripts": {
