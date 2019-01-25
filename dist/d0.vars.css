@@ -1,4 +1,4 @@
-/*! d0css v1.0.4 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.5 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -470,6 +470,14 @@ section>table td:empty {
     nav[id]>ul>li:last-child:not(:first-child) ul {
         left: auto;
         right: 0;
+    }
+
+    nav>ul~section[id]:last-of-type {
+        display: block;
+    }
+
+    nav>ul~section[id]:target~section[id]:last-of-type {
+        display: none;
     }
 
     section[id] {

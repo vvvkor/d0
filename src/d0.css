@@ -1,4 +1,4 @@
-/*! d0css v# https://github.com/vvvkor/d0 */
+/*! d0css v0.0.0 https://github.com/vvvkor/d0 */
 /* Classless pure CSS microframework */
 
 /*
@@ -18,8 +18,11 @@ Structure:
 -- form, button
 -- togglers
 --- nav
+--- pop
+--- tabs
 --- toggle
 --- modal
+--- gallery
 -- colors
 - print
 */
@@ -117,8 +120,6 @@ a:hover{color:var(--hover);}
 a:not([href]){color:inherit;}
 abbr, a{text-decoration:none;}
 
-/* hilite */
-
 /* icon */
 svg{fill:currentColor;}
 svg{display:inline-block;width:1em;height:1em;transform:translate(0,.15em) scale(1.2);}
@@ -146,28 +147,11 @@ form>p{margin:var(--gap-s) 0;}
 form>table tr>*{border:none;}
 /*form>table, fieldset table, td textarea{width:100%;}*/
 
-/* css toggle */
-/* js toggle */
-/* position */
-/* nav */
-/* box */
-/* gallery */
-/* tabs */
-
-	
 /* color */
-
 blockquote,pre,code,thead,tfoot{background-color:var(--bg-pane);}
 pre code{background:none;}
 svg{color:var(--text-lite);}
 mark{background-color:var(--bg-warning);} 
-
-/* yellow fade */
-/* auto padding */
-/* grid */
-/* specials */
-/* top bar */
-/* drawer + effect */
 
 /* media */
 
@@ -179,16 +163,7 @@ mark{background-color:var(--bg-warning);}
 	/* form */
 	input,select,textarea{border-width:0 0 thin 0;}
 	button,[type="submit"]{border:var(--border);padding:var(--gaps-s);}
-	/* popup * /
-	nav[id]{display:inline-block;}
-	nav[id]>ul{list-style:none;padding:0;margin:0;}
-	nav[id]>ul ul:not(:target){display:none;}
-	/**/
 }
-
-/* helpers */
-/* switch */
-/* radio tabs */
 
 
 /* --- classless additions --- */
@@ -260,6 +235,10 @@ nav[id]>ul>li>a:after{display:none;}
 nav[id]>ul>li>ul{left:0;top:100%;}
 nav[id]>ul>li:last-child:not(:first-child) ul{left:auto;right:0;}
 
+/* tabs */
+nav>ul~section[id]:last-of-type{display:block;}
+nav>ul~section[id]:target~section[id]:last-of-type{display:none;}
+
 /* toggle */
 section[id]{border:var(--border);padding:var(--gap-n);}
 
@@ -282,7 +261,6 @@ aside[id]{
 figure>section{height:100vh;display:flex;align-items:center;justify-content:center;}
 
 /* gallery */
-
 figure[id]{margin:0;}
 figure[id]>a,figure[id]>a:after{display:none;position:fixed;left:0;top:0;color:var(--bg);padding:0 var(--gap-s);}
 figure[id]>a:target{background:#000 50% 50% / contain no-repeat;background-image:var(--img);z-index:40;display:block;width:100%;height:100vh;cursor:default;}

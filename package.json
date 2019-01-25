@@ -1,6 +1,6 @@
 {
   "name": "d0css",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Classless CSS microframework",
   "main": "d0.css",
   "scripts": {
@@ -8,9 +8,12 @@
     "build:css.vars": "postcss -c postcss.config.vars.json",
     "minify:css": "postcss -u cssnano dist/d0.css -o dist/d0.min.css",
     "minify:css.vars": "postcss -u cssnano dist/d0.vars.css -o dist/d0.vars.min.css",
-    "build:version.dist": "cross-var replace-in-file \"/d0css v#/g\" \"d0css v$npm_package_version\" \"dist/*.*\" --isRegex",
+	"build:docs": "copyfiles ./src/d0.html ./docs -f",
+    "build:version.dist": "cross-var replace-in-file \"/d0css v\\d+\\.\\d+\\.\\d+/g\" \"d0css v$npm_package_version\" \"dist/*.*\" --isRegex",
     "build:version.docs": "cross-var replace-in-file \"/d0css@\\d+\\.\\d+\\.\\d+/g\" \"d0css@$npm_package_version\" \"docs/*.*\" --isRegex",
-    "build": "npm run build:css && npm run build:css.vars && npm run minify:css && npm run minify:css.vars && npm run build:version.dist && npm run build:version.docs",
+    "build:version.docs.path": "cross-var replace-in-file \"/d0\\.css/g\" \"https://cdn.jsdelivr.net/npm/d0css@$npm_package_version/dist/d0.min.css\" \"docs/*.*\" --isRegex",
+    "build:version.docs.info": "cross-var replace-in-file \"/v\\d+\\.\\d+\\.\\d+/g\" \"v$npm_package_version\" \"docs/*.*\" --isRegex",
+    "build": "npm run build:css && npm run build:css.vars && npm run minify:css && npm run minify:css.vars && npm run build:docs && npm run build:version.dist && npm run build:version.docs.path && npm run build:version.docs.info",
     "//prepublishOnly": "npm version patch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -30,6 +33,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "copyfiles": "^2.1.0",
     "cross-var": "^1.1.0",
     "cssnano": "^3.10.0",
     "perfectionist": "^2.4.0",
