@@ -8,7 +8,7 @@
     "build:css.vars": "postcss -c postcss.config.vars.json",
     "minify:css": "postcss -u cssnano dist/d0.css -o dist/d0.min.css",
     "minify:css.vars": "postcss -u cssnano dist/d0.vars.css -o dist/d0.vars.min.css",
-	"build:docs": "copyfiles ./src/d0.html ./docs -f",
+	"build:docs": "copyfiles ./src/index.html ./docs -f",
     "build:version.dist": "cross-var replace-in-file \"/d0css v\\d+\\.\\d+\\.\\d+/g\" \"d0css v$npm_package_version\" \"dist/*.*\" --isRegex",
     "build:version.docs": "cross-var replace-in-file \"/d0css@\\d+\\.\\d+\\.\\d+/g\" \"d0css@$npm_package_version\" \"docs/*.*\" --isRegex",
     "build:version.docs.path": "cross-var replace-in-file \"/d0\\.css/g\" \"https://cdn.jsdelivr.net/npm/d0css@$npm_package_version/dist/d0.min.css\" \"docs/*.*\" --isRegex",

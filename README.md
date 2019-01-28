@@ -98,7 +98,7 @@ Download minified [d0 files](https://github.com/vvvkor/d0/tree/master/dist).
 
 ## Docs
 
-[Docs and demo](http://vadimkor.ru/projects/d0/)
+[Docs and demo](https://vvvkor.github.io/d0/)
 
 ## License
 
