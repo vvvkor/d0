@@ -173,12 +173,12 @@ section[id]:not(:target), aside[id]:not(:target){display:none;}
 
 /* grid */
 section>table{width:100%;table-layout:fixed;}
-section>table td{border:none;}
+section>table td{border:none;padding:0 var(--gap-n);}
 section>table td:empty{padding:0;}
 @media print, (max-width:54.99em){
 	/* mobile */
 	section>table tr{display:block;}
-	section>table td{display:block;width:100%;margin:var(--gap-n) 0;}
+	section>table td{display:block;width:100%;margin:var(--gap-n) 0;padding:0;}
 }
 
 
