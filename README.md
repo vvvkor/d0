@@ -28,6 +28,7 @@
 * Toggle element
 * Modal dialog
 * Gallery
+* Tabs
 * Table
 * Alert
 * Icon
