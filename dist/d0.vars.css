@@ -1,4 +1,4 @@
-/*! d0css v1.0.9 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.10 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -515,7 +515,7 @@ section>table td:empty {
     }
 
     figure>section {
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;

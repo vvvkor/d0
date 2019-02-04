@@ -258,7 +258,7 @@ aside[id]{
 }
 
 /* full */
-figure>section{height:100vh;display:flex;align-items:center;justify-content:center;}
+figure>section{min-height:100vh;display:flex;align-items:center;justify-content:center;}
 
 /* gallery */
 figure[id]{margin:0;}
