@@ -287,12 +287,13 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 
 <h3 id="form-aligned">Aligned form (stacked on small screen)</h3>
 
-<pre>form &gt; table</pre>
+<pre>form &gt; table, input ~ mark</pre>
 <form method="post">
 	<table>
 	<tr>
 		<td><label for="nm">Name</label>
 		<td><input type="text" name="nm" id="nm" required pattern="[A-Za-z]{2,}" title="Two or more letters">
+			<mark><small>Enter two up to four letters</small></mark>
 		
 	<tr><td colspan="2">
 	<details data-open id="form-fieldset">
@@ -304,10 +305,12 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 		<tr>
 			<td><label for="lng">Select</label>
 			<td>
-			<select name="lng" id="lng">
-				<option value="en" selected>English</option>
+			<select name="lng" id="lng" required>
+				<option value="" selected>-</option>
+				<option value="en">English</option>
 				<option value="ru">Russian</option>
 			</select>
+			<mark><small>Select language</small></mark>
 		<tr>
 			<td><label for="dis">Disabled</label>
 			<td><input type="text" name="dis" id="dis" disabled>
@@ -331,10 +334,14 @@ block. Empty first <code>li</code> makes it pop <nav id="pop2"><ul><li><li><a hr
 			<td><input type="color" name="clrn" id="clrn" value="#ff0000">
 		<tr>
 			<td><label for="msg">Textarea</label>
-			<td><textarea name="msg" id="msg" cols="20" rows="5">text<b></textarea>
+			<td><textarea name="msg" id="msg" cols="20" rows="5" required></textarea>
+				<br><mark><small>Type something</small></mark>
 		<tr>
 			<td>Upload
 			<td><label title="Drop image" for="up"><input id="up" type="file" name="up[]" multiple></label>
+		<tr>
+			<td>Box
+			<td><label for="bx"><input id="bx" type="checkbox" required name="bx" value="1" title="You need to check the box to continue"> Required box <mark><small>Check to continue</small></mark></label>
 			
 		</table>
 	</fieldset>

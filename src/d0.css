@@ -198,6 +198,7 @@ button:focus, input:focus, select:focus, textarea:focus{
 }
 button[disabled],[type="submit"][disabled]{opacity:.5;}
 input:invalid{box-shadow:0 0 0 .15em rgba(255,200,80,.8);}
+	:valid~mark{display:none;}
 input[type="range"], input[type="color"]{vertical-align:middle;padding:unset;}
 	input[type="range"]{border:initial;}
 /* color */
