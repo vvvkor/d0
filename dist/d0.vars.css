@@ -1,4 +1,4 @@
-/*! d0css v1.0.10 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.11 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -337,6 +337,10 @@ section>table td:empty {
 
     input:invalid {
         box-shadow: 0 0 0 .15em rgba(255, 200, 80, .8);
+    }
+
+    :valid~mark {
+        display: none;
     }
 
     input[type="range"], input[type="color"] {
