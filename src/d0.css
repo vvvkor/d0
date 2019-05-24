@@ -197,7 +197,9 @@ button:focus, input:focus, select:focus, textarea:focus{
 	box-shadow:0 0 0 .15em rgba(0,0,0,.1);outline:none;
 }
 button[disabled],[type="submit"][disabled]{opacity:.5;}
-input:invalid{box-shadow:0 0 0 .15em rgba(255,200,80,.8);}
+	[name]:invalid{/*box-shadow:0 0 0 .08em rgba(255,200,80,.8);*/border-color:var(--text-danger);}
+	[type="checkbox"]:invalid+span, [type="radio"]:invalid+span{color:var(--text-danger);}
+	[name]:invalid:focus{box-shadow:0 0 0 .15em rgba(255,100,100,.3);}
 	:valid~mark{display:none;}
 input[type="range"], input[type="color"]{vertical-align:middle;padding:unset;}
 	input[type="range"]{border:initial;}

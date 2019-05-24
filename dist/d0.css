@@ -1,4 +1,4 @@
-/*! d0css v1.0.11 https://github.com/vvvkor/d0 */
+/*! d0css v1.0.12 https://github.com/vvvkor/d0 */
 
 :root {
     --text: #222;
@@ -366,8 +366,18 @@ section>table td:empty {
         opacity: .5;
     }
 
-    input:invalid {
-        box-shadow: 0 0 0 .15em rgba(255, 200, 80, .8);
+    [name]:invalid {
+        border-color: #c11;
+        border-color: var(--text-danger);
+    }
+
+    [type="checkbox"]:invalid+span, [type="radio"]:invalid+span {
+        color: #c11;
+        color: var(--text-danger);
+    }
+
+    [name]:invalid:focus {
+        box-shadow: 0 0 0 .15em rgba(255, 100, 100, .3);
     }
 
     :valid~mark {
