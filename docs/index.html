@@ -5,13 +5,13 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>d0 - Classless CSS microframework</title>
 	<!--link href="https://cdn.jsdelivr.net/npm/d0css/dist/d0.min.css" rel="stylesheet"-->
-	<link href="https://cdn.jsdelivr.net/npm/d0css@1.0.16/dist/d0.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/d0css@1.0.17/dist/d0.min.css" rel="stylesheet">
 </head>
 <body>
 <main>
 <h1><a href="https://github.com/vvvkor/d0">d0</a> - Classless CSS microframework</h1>
 
-<p><code>v1.0.16</code></p>
+<p><code>v1.0.17</code></p>
 <pre><code>npm i d0css</code></pre>
 
 <ul>
@@ -375,23 +375,27 @@ mark &gt; button, span &gt; button, mark &gt; a</pre>
 <figure><em>Success</em></figure>
 
 <form action="#submit">
-	<p>
+	<div>
 		<button><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Button</span></button>
 		<input type="submit" value="Submit">
 		<a href="#link">Link</a>
-	<br>
+	</div>
+	<div>
 		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
 		<input type="submit" value="Disabled" disabled>
 		<a>Link without <code>href</code></a>
-	<br>
+	</div>
+	<div>
+		<!-- wrapped in DIV because ":valid~mark" is interpreted as input hint -->
 		<mark><button formaction="#submit-danger"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
 		<mark><input type="submit" value="Marked"></mark>
 		<mark><a href="#link-danger">Marked</a></mark>
-	<br>
+	</div>
+	<div>
 		<span><button formaction="#submit-lite"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Lite</span></button></span>
 		<span><input type="submit" value="Lite"></span>
 		Text
-	</p>
+	</div>
 </form>
 <!--
 <a href="#link-button"><button>Button inside link</button></a>

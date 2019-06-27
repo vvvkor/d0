@@ -96,6 +96,12 @@ ul,ol,dl,blockquote,pre,hr,p,figure{margin:var(--gap-n) 0;}
 h1,h2,h3,h4,h5,h6{margin:3rem 0 1.5rem 0;line-height:1.2;}
 	h1+h2, h2+h3, h3+h4, h4+h5, h5+h6{margin-top:2rem;}
 	/* h1:first-child, h2:first-child, h3:first-child{margin-top:1.5rem;} */
+	h1{font-size:200%;}
+	h2{font-size:150%;}
+	h3{font-size:117%;}
+	h4{font-size:100%;}
+	h5{font-size:83%;}
+	h6{font-size:67%;} 
 blockquote,pre,fieldset{padding:var(--gaps-n);}
 pre,code{font-family:monospace;white-space:pre-wrap;}
 pre{overflow:auto;max-height:80vh;padding:var(--gap-n);/*max-width:100%;*/}

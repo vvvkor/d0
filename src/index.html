@@ -375,23 +375,27 @@ mark &gt; button, span &gt; button, mark &gt; a</pre>
 <figure><em>Success</em></figure>
 
 <form action="#submit">
-	<p>
+	<div>
 		<button><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Button</span></button>
 		<input type="submit" value="Submit">
 		<a href="#link">Link</a>
-	<br>
+	</div>
+	<div>
 		<button disabled><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Disabled</span></button>
 		<input type="submit" value="Disabled" disabled>
 		<a>Link without <code>href</code></a>
-	<br>
+	</div>
+	<div>
+		<!-- wrapped in DIV because ":valid~mark" is interpreted as input hint -->
 		<mark><button formaction="#submit-danger"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Marked</span></button></mark>
 		<mark><input type="submit" value="Marked"></mark>
 		<mark><a href="#link-danger">Marked</a></mark>
-	<br>
+	</div>
+	<div>
 		<span><button formaction="#submit-lite"><svg width="32" height="32"><use xlink:href="#svg-ok"/></svg><span>Lite</span></button></span>
 		<span><input type="submit" value="Lite"></span>
 		Text
-	</p>
+	</div>
 </form>
 <!--
 <a href="#link-button"><button>Button inside link</button></a>
